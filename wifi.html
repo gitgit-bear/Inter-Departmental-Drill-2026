@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#0a0e1a">
   <title>WiFi Connect — 跨部門網絡安全演習</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="wifi.js" defer></script>
+  <script src="wifi-connect.js" defer></script>
 </head>
 <body>
   <div class="bg-layer" aria-hidden="true"></div>
@@ -18,10 +18,19 @@
     <header class="hero hero-compact">
       <img src="assets/logo.png" alt="" class="logo logo-small">
       <h1 class="page-heading">WiFi Connect</h1>
-      <p class="page-sub">掃描 QR Code 或手動輸入以下資料</p>
+      <p class="page-sub">一按連接或掃描 QR Code</p>
     </header>
 
+    <button type="button" class="btn-connect-wifi" data-wifi-connect>
+      <span class="btn-icon" aria-hidden="true">📶</span>
+      <span class="btn-text">
+        <strong>一按連接 Sec_CS3</strong>
+        <small>Tap to join WiFi</small>
+      </span>
+    </button>
+
     <section class="card wifi-card">
+      <p class="wifi-fallback-label">或手動連接</p>
       <div class="qr-wrap">
         <img src="assets/wifi-qr.png" width="220" height="220" alt="WiFi QR Code — scan to join Sec_CS3">
       </div>
@@ -31,14 +40,14 @@
           <dt>SSID</dt>
           <dd>
             <code id="ssid">Sec_CS3</code>
-            <button type="button" class="copy-btn" data-copy="Sec_CS3" data-label="SSID">Copy</button>
+            <button type="button" class="copy-btn" data-copy="Sec_CS3">Copy</button>
           </dd>
         </div>
         <div class="wifi-row">
           <dt>Password</dt>
           <dd>
             <code id="password">S3cur3Netw0rk!24</code>
-            <button type="button" class="copy-btn" data-copy="S3cur3Netw0rk!24" data-label="Password">Copy</button>
+            <button type="button" class="copy-btn" data-copy="S3cur3Netw0rk!24">Copy</button>
           </dd>
         </div>
         <div class="wifi-row">
@@ -47,7 +56,7 @@
         </div>
       </dl>
 
-      <p class="hint">iPhone / Android：用相機掃描上方 QR Code 即可加入網絡</p>
+      <p class="hint">Android：一按即可彈出連接提示<br>iPhone：一按安裝設定描述檔後自動加入</p>
     </section>
   </main>
 </body>
