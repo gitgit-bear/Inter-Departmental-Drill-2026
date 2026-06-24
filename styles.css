@@ -504,3 +504,130 @@ body {
 .wifi-toast[hidden] {
   display: none;
 }
+
+.ios-wifi-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.ios-wifi-modal[hidden] {
+  display: none;
+}
+
+.ios-wifi-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.ios-wifi-sheet {
+  position: relative;
+  width: 100%;
+  max-width: 26rem;
+  max-height: 92dvh;
+  overflow-y: auto;
+  margin: 0 0.75rem max(0.75rem, env(safe-area-inset-bottom));
+  padding: 1.25rem 1.25rem 1.5rem;
+  border-radius: 1.25rem 1.25rem 1rem 1rem;
+  background: linear-gradient(180deg, #122240 0%, #0a1628 100%);
+  border: 1px solid rgba(0, 200, 255, 0.25);
+  box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.5);
+  color: var(--ink);
+}
+
+.ios-wifi-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.85rem;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--ink);
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.ios-wifi-sheet h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.35rem;
+  padding-right: 2rem;
+}
+
+.ios-wifi-status {
+  font-size: 0.88rem;
+  color: #5eead4;
+  margin-bottom: 1rem;
+}
+
+.ios-wifi-creds {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 1rem;
+}
+
+.ios-wifi-creds dt {
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.2rem;
+}
+
+.ios-wifi-creds code {
+  display: block;
+  font-family: "Cascadia Code", "Consolas", monospace;
+  font-size: 1rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.5rem 0.65rem;
+  border-radius: 0.5rem;
+  word-break: break-all;
+  user-select: all;
+  -webkit-user-select: all;
+}
+
+.ios-wifi-steps {
+  margin: 0 0 1rem 1.1rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: rgba(240, 244, 255, 0.9);
+}
+
+.ios-wifi-steps li {
+  margin-bottom: 0.45rem;
+}
+
+.ios-wifi-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.ios-wifi-copy {
+  flex: 1;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.65rem;
+  background: linear-gradient(135deg, rgba(30, 111, 217, 0.9), rgba(0, 140, 200, 0.95));
+  color: #fff;
+  cursor: pointer;
+}
+
+.ios-wifi-note {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  line-height: 1.45;
+}
