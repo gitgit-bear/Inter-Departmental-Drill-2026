@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0a0e1a">
+  <title>WiFi Connect — 跨部門網絡安全演習</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="wifi.js" defer></script>
+</head>
+<body>
+  <div class="bg-layer" aria-hidden="true"></div>
+  <div class="overlay" aria-hidden="true"></div>
+
+  <main class="page page-inner">
+    <a href="index.html" class="back-link">← Back</a>
+
+    <header class="hero hero-compact">
+      <img src="assets/logo.png" alt="" class="logo logo-small">
+      <h1 class="page-heading">WiFi Connect</h1>
+      <p class="page-sub">掃描 QR Code 或手動輸入以下資料</p>
+    </header>
+
+    <section class="card wifi-card">
+      <div class="qr-wrap">
+        <img src="assets/wifi-qr.png" width="220" height="220" alt="WiFi QR Code — scan to join Sec_CS3">
+      </div>
+
+      <dl class="wifi-details">
+        <div class="wifi-row">
+          <dt>SSID</dt>
+          <dd>
+            <code id="ssid">Sec_CS3</code>
+            <button type="button" class="copy-btn" data-copy="Sec_CS3" data-label="SSID">Copy</button>
+          </dd>
+        </div>
+        <div class="wifi-row">
+          <dt>Password</dt>
+          <dd>
+            <code id="password">S3cur3Netw0rk!24</code>
+            <button type="button" class="copy-btn" data-copy="S3cur3Netw0rk!24" data-label="Password">Copy</button>
+          </dd>
+        </div>
+        <div class="wifi-row">
+          <dt>Security</dt>
+          <dd><code>WPA2</code></dd>
+        </div>
+      </dl>
+
+      <p class="hint">iPhone / Android：用相機掃描上方 QR Code 即可加入網絡</p>
+    </section>
+  </main>
+</body>
+</html>
