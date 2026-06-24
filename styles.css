@@ -280,93 +280,166 @@ body {
 }
 
 .page-rundown {
-  max-width: 56rem;
+  max-width: 58rem;
   margin: 0 auto;
   width: 100%;
+  gap: 1.25rem;
+  padding-bottom: 2.5rem;
 }
 
-.rundown-wide {
-  max-width: 56rem;
-  padding: 1rem 0.75rem 1.25rem;
+.overlay-rundown {
+  background:
+    linear-gradient(180deg, rgba(5, 8, 16, 0.35) 0%, rgba(5, 8, 16, 0.6) 100%),
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(30, 111, 217, 0.15), transparent),
+    linear-gradient(90deg, rgba(196, 30, 58, 0.12) 0%, transparent 42%, transparent 58%, rgba(30, 111, 217, 0.12) 100%);
+}
+
+.rundown-hero {
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem 0 0.25rem;
+}
+
+.rundown-hero-title {
+  font-size: clamp(2rem, 9vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #fff;
+  text-shadow:
+    0 0 20px rgba(100, 180, 255, 0.9),
+    0 0 40px rgba(60, 140, 255, 0.5),
+    0 2px 8px rgba(0, 0, 0, 0.8);
+  line-height: 1.1;
+}
+
+.rundown-poster {
+  width: 100%;
+  max-width: 58rem;
 }
 
 .rundown-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(0.5rem, 2vw, 1rem);
   width: 100%;
 }
 
 .rundown-table-wrap {
-  overflow-x: auto;
-  border-radius: 0.5rem;
+  border-radius: 0.35rem;
+  overflow: hidden;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
 .rundown-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.82rem;
-  line-height: 1.45;
+  font-size: clamp(0.62rem, 2.4vw, 0.8rem);
+  line-height: 1.35;
+  table-layout: fixed;
 }
 
 .rundown-table thead th {
-  background: #1a3a6e;
+  background: linear-gradient(180deg, #2a4f8f 0%, #1a3568 100%);
   color: #fff;
   font-weight: 700;
+  text-align: center;
+  padding: 0.45rem 0.35rem;
+  border: 1px solid #0f2448;
+  font-size: clamp(0.7rem, 2.6vw, 0.85rem);
+  letter-spacing: 0.04em;
+}
+
+.rundown-table thead th:last-child {
   text-align: left;
-  padding: 0.55rem 0.65rem;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding-left: 0.5rem;
 }
 
 .rundown-table thead th:first-child {
-  width: 6.5rem;
-  white-space: nowrap;
+  width: 28%;
 }
 
 .rundown-table tbody td {
-  padding: 0.5rem 0.65rem;
-  border: 1px solid rgba(26, 58, 110, 0.25);
-  color: #0d1f3c;
+  padding: 0.38rem 0.35rem;
+  border: 1px solid #5a8ec4;
+  color: #0a1e3d;
   vertical-align: top;
+  font-weight: 500;
 }
 
 .rundown-table tbody tr:nth-child(odd) td {
-  background: #b8d4f0;
+  background: #d6e9f8;
 }
 
 .rundown-table tbody tr:nth-child(even) td {
-  background: #8bb8e8;
+  background: #a4c8eb;
 }
 
 .rundown-table tbody td:first-child {
   font-family: "Cascadia Code", "Consolas", monospace;
-  font-weight: 600;
-  white-space: nowrap;
+  font-weight: 700;
+  font-size: clamp(0.58rem, 2.2vw, 0.75rem);
+  text-align: center;
+  vertical-align: middle;
+  color: #0d2850;
+  line-height: 1.25;
+}
+
+.rundown-table tbody td:last-child {
+  padding-left: 0.5rem;
+  padding-right: 0.4rem;
 }
 
 .text-red {
-  color: #c41e3a;
+  color: #d42020;
   font-weight: 700;
 }
 
-.rundown-card .hint {
+.rundown-footnote {
   margin-top: 1rem;
-  text-align: left;
-  padding: 0 0.5rem;
+  font-size: 0.78rem;
+  color: rgba(240, 244, 255, 0.65);
+  text-align: center;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
 }
 
-@media (min-width: 640px) {
+@media (max-width: 520px) {
   .rundown-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 0.75rem;
+    gap: 0.35rem;
   }
 
-  .rundown-wide {
-    padding: 1.25rem 1rem 1.5rem;
+  .page-rundown {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .rundown-table tbody td {
+    padding: 0.3rem 0.2rem;
+  }
+
+  .rundown-table tbody td:last-child {
+    padding-left: 0.3rem;
+    word-break: break-word;
+  }
+}
+
+@media (min-width: 768px) {
+  .rundown-grid {
+    gap: 1rem;
   }
 
   .rundown-table {
     font-size: 0.78rem;
+  }
+
+  .rundown-table tbody td {
+    padding: 0.45rem 0.5rem;
+  }
+
+  .rundown-table tbody td:first-child {
+    font-size: 0.75rem;
   }
 }
 
