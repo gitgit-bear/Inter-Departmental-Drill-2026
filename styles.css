@@ -279,47 +279,95 @@ body {
   line-height: 1.5;
 }
 
-.schedule {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+.page-rundown {
+  max-width: 56rem;
+  margin: 0 auto;
+  width: 100%;
 }
 
-.schedule li {
+.rundown-wide {
+  max-width: 56rem;
+  padding: 1rem 0.75rem 1.25rem;
+}
+
+.rundown-grid {
   display: grid;
-  grid-template-columns: 3.5rem 1fr;
-  gap: 0.75rem;
-  padding: 0.85rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
 }
 
-.schedule li:last-child {
-  border-bottom: none;
+.rundown-table-wrap {
+  overflow-x: auto;
+  border-radius: 0.5rem;
 }
 
-.schedule time {
-  font-family: "Cascadia Code", "Consolas", monospace;
-  font-size: 0.85rem;
+.rundown-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.rundown-table thead th {
+  background: #1a3a6e;
+  color: #fff;
   font-weight: 700;
-  color: var(--cyan);
-  padding-top: 0.1rem;
+  text-align: left;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.schedule strong {
-  display: block;
-  font-size: 0.92rem;
-  margin-bottom: 0.15rem;
+.rundown-table thead th:first-child {
+  width: 6.5rem;
+  white-space: nowrap;
 }
 
-.schedule span {
-  font-size: 0.8rem;
-  color: var(--ink-muted);
+.rundown-table tbody td {
+  padding: 0.5rem 0.65rem;
+  border: 1px solid rgba(26, 58, 110, 0.25);
+  color: #0d1f3c;
+  vertical-align: top;
+}
+
+.rundown-table tbody tr:nth-child(odd) td {
+  background: #b8d4f0;
+}
+
+.rundown-table tbody tr:nth-child(even) td {
+  background: #8bb8e8;
+}
+
+.rundown-table tbody td:first-child {
+  font-family: "Cascadia Code", "Consolas", monospace;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.text-red {
+  color: #c41e3a;
+  font-weight: 700;
 }
 
 .rundown-card .hint {
   margin-top: 1rem;
   text-align: left;
+  padding: 0 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .rundown-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .rundown-wide {
+    padding: 1.25rem 1rem 1.5rem;
+  }
+
+  .rundown-table {
+    font-size: 0.78rem;
+  }
 }
 
 @media (min-width: 480px) {
